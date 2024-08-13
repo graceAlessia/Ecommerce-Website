@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900&family=Playwrite+CZ:wght@100..400&display=swap');
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.item input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.item input:focus{
+    outline: none;
+}
+
+.item .buy-btn{
+    background-color: coral;
+    opacity: 1;
+    transition: 0.4s all;
+    border-color: white;
+}
+
+.item .buy-btn:hover{
+    background-color: black;
+}

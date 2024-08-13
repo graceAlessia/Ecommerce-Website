@@ -1,0 +1,31 @@
+#checkout-form .checkout-small-element{
+    display: inline-block;
+    width: 45%;
+    margin: 10px auto;
+}
+
+#checkout-form .checkout-large-element{
+    width: 91%;
+}
+
+#checkout-form .checkout-btn-container{
+    margin: 10px;
+    text-align: right;
+    margin-right: 40px;
+}
+
+#checkout-form #checkout-btn{
+    color: white;
+    background-color: coral;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    border-color: transparent;
+}
+
+#checkout-form #checkout-btn:hover{
+    background-color: #f39576;
+}
