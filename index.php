@@ -69,7 +69,7 @@
     </section>
 
     <!--Brand-->
-    <section id="brand" class="container">
+    <!-- <section id="brand" class="container">
         <div class="row">
             <img class="img-fluid col-lg-3 col-md-6 col-sm-12"
                 src="https://m.media-amazon.com/images/I/71WPPI73PHL.jpg">
@@ -80,7 +80,7 @@
             <img class="img-fluid col-lg-3 col-md-6 col-sm-12"
                 src="https://m.media-amazon.com/images/I/71WPPI73PHL.jpg">
         </div>
-    </section>
+    </section> -->
 
     <!--New-->
     <section id="new" class="w-100">
