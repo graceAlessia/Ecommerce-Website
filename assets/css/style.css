@@ -52,7 +52,7 @@ button{
 }
 
 button:hover{
-    background-color: #f39576;
+    background-color: #edb09c;
 }
 .btn{
     background: rgb(3, 3, 42);
@@ -232,7 +232,8 @@ button:hover{
 }
 
 .product .buy-btn{
-    background-color: #fb774b;
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(3, 3, 42);
     transform: translateY(50px);
     opacity: 0;
     border-color: white;
