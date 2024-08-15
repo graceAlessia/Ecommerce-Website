@@ -1,0 +1,55 @@
+
+#account-form{
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input{
+    margin:5px auto;
+}
+
+#account-form #change-pass-btn{
+    color: white;
+    background-color: coral;
+    border-color: transparent;
+}
+
+.account-info #order-btn, #logout-btn{
+    color: coral;
+    text-decoration: none;
+}
+
+.orders table {
+        width: 90%;
+        border-collapse: collapse;
+}
+
+.orders .product-info {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    /* margin-left: 40px; */
+}
+
+img {
+    width: 100%; 
+    height: auto; 
+    max-width: 80px;
+    max-height: 80px; 
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.orders .product-info img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+
+.orders .product-info p{
+    margin: 3px;
+}
+
