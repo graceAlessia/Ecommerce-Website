@@ -16,7 +16,7 @@ if (isset($_POST['place_order'])) {
     $address = $_POST['address'];
     $order_cost = $_SESSION['total'];
     $order_status = "on_hold";
-    $user_id = 1;
+    $user_id = $_SESSION['user_id']; //linking with register page
     $order_date = date('Y-md H:i:s');
 
     $stmt = $conn->prepare("INSERT INTO orders(order_cost, order_status, user_id, user_phone, user_city, user_address, order_date)

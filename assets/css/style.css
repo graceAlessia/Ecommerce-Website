@@ -71,7 +71,7 @@ button:hover{
 }
 
 .navbar{
-    font-size: 18px !important; 
+    font-size: 16px !important; 
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
     top:0;
@@ -82,7 +82,7 @@ button:hover{
     padding: 0 20px;
     color: #000;
     transition: 0.4 ease;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -283,7 +283,7 @@ hr{
 }
 
 footer{
-    background-color: rgb(32, 32, 33);
+    background-color: rgb(0, 0, 0);
 }
 
 footer h5{

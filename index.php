@@ -18,7 +18,7 @@
     <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
         <div class="container">
-            <img src="assets\imgs\shark.png" alt="Cozy_Shark" style="height:50px; width:auto;">
+            <img src="assets\imgs\logo.png" alt="Cozy_Shark" style="height:50px; width:auto;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Products</a>
+                        <a class="nav-link" href="shop.php">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="cart.php">
@@ -225,7 +225,7 @@
     <footer class="mt-5 py-5">
         <div class="row container mx-auto pt-5">
             <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-                <img class="logo" src="assets\imgs\shark.png" style="height:50px; width: auto;">
+                <img class="logo" src="assets\imgs\logoW.svg" style="height:50px; width: auto; color:white;">
                 <p class="pt-3">We provide the best quality products with fair price.</p>
             </div>
             <div class="footer-one col-lg-3 col-md-6 col-sm-12">
