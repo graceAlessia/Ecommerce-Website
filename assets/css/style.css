@@ -52,7 +52,7 @@ button{
 }
 
 button:hover{
-    background-color: #edb09c;
+    background-color: aqua;
 }
 .btn{
     background: rgb(3, 3, 42);
@@ -67,7 +67,7 @@ button:hover{
 }
 
 .btn:hover{
-    background-color: #f39576;
+    background-color: aqua;
 }
 
 .navbar{
@@ -77,10 +77,16 @@ button:hover{
     top:0;
     left:0;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background-color: #1A2130 !important;
+    color: white;
+}
+.navbar .logo:hover{
+    filter: brightness(0) saturate(100%) invert(96%) sepia(28%) saturate(3202%) hue-rotate(99deg) brightness(110%) contrast(100%);
+    /*"https://angel-rs.github.io/css-color-filter-generator/" is used as Hex to filter converter*/
 }
 .navbar-light .navbar-nav .nav-link{
     padding: 0 20px;
-    color: #000;
+    color: white;
     transition: 0.4 ease;
     font-size: 16px;
 }
@@ -89,7 +95,7 @@ button:hover{
 .navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar i:hover{
- color:aquamarine;
+ color:aqua;
 }
 
 .navbar i {
@@ -118,7 +124,31 @@ button:hover{
     } 
 }
 
+.navbar 
+.cart-quantity {
+    position: absolute;
+    margin-top: -10px; /* Adjust as needed to position above the icon */ /* Adjust as needed to position above the icon */
+    background-color: coral;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: xx-small;
+}
+.navbar-toggler {
+    width: 40px; /* Adjust width as needed */
+    height: 40px; /* Ensure height matches width */
+    border-radius: 20%; /* Makes the button round */
+    padding: 0; /* Remove default padding */
+    border: none; /* Optional: remove default border */
+    background-color: #ffffff; /* Adjust background color as needed */
+    
+}
 
+.navbar-toggler-icon {
+    width: 20px; /* Adjust icon width */
+    height: 20px; /* Adjust icon height */ /* Custom icon if needed */
+    background-size: cover; /* Adjust to fit icon */
+}
 
 
 #home{
@@ -238,6 +268,7 @@ button:hover{
     opacity: 0;
     border-color: white;
     transition: 0.3s all;;
+    color: white;
 }
 
 .product:hover .buy-btn{
@@ -249,7 +280,7 @@ hr{
     width: 30px;
     height: 3px !important;
     opacity: 1 !important;
-    background-color: #fb774b;
+    background-color: rgb(3, 3, 42);
 }
 .star{
     padding: 10px 0;
@@ -284,7 +315,7 @@ hr{
 }
 
 footer{
-    background-color: rgb(0, 0, 0);
+    background-color:#1A2130;
 }
 
 footer h5{
@@ -302,7 +333,7 @@ footer li a{
     text-decoration: none;
 }
 footer li a:hover{
-    color:#D8D8D8;
+    color:aqua;
 }
 
 footer .copyright a{
@@ -320,7 +351,7 @@ footer .copyright a{
 
 footer .copyright a:hover{
     color:#fff;
-    background-color: #fb774b;
+    background-color: #00ffff;
 }
 
 footer p{

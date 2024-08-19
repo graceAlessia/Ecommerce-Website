@@ -22,18 +22,13 @@
 }
 
 .orders table {
-        width: 90%;
+        width: 100%;
         border-collapse: collapse;
 }
 
-.orders .product-info {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    /* margin-left: 40px; */
-}
 
-img {
+
+/* img {
     width: 100%; 
     height: auto; 
     max-width: 80px;
@@ -46,10 +41,32 @@ img {
     width: 80px;
     height: 80px;
     margin-right: 10px;
-}
+} */
 
 
 .orders .product-info p{
     margin: 3px;
+    flex-wrap: wrap;
 }
 
+.orders th{
+    padding: 5px 20px;
+    color: white;
+    background-color: coral;
+    /* text-align: left; */
+}
+
+.orders td{
+    padding: 10px 20px;
+}
+
+.orders td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.orders .order-deatails-btn{
+    color: white;
+    background-color: coral;
+}

@@ -16,7 +16,7 @@
 
 #checkout-form #checkout-btn{
     color: white;
-    background-color: coral;
+    background-color:  rgb(3, 3, 42);
     font-family: "Montserrat", sans-serif;
     border-radius: 5px;
     padding: 5px 10px;
@@ -27,5 +27,5 @@
 }
 
 #checkout-form #checkout-btn:hover{
-    background-color: #f39576;
+    background-color:  rgb(20, 20, 67);
 }
