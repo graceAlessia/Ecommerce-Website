@@ -45,9 +45,9 @@
 
     <div class="copyright mt-5">
         <div class="row container mx-auto">
-            <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <!-- <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
                 <img src="assets\imgs\payment.png" style="height: 50px; width: auto;">
-            </div>
+            </div> -->
             <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
                 <p>cozyshark@2024 All Right Reserved</p>
             </div>

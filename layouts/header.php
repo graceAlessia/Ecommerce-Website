@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 
 
@@ -5,7 +6,7 @@ session_start();
 ?>
 
 
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -18,8 +19,8 @@ session_start();
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets\css\style.css">
-    <link rel="stylesheet" href="assets\css\login.css">
-    <link rel="stylesheet" href="assets\css\register.css">
+    <link rel="stylesheet" href="assets\css\loginstyle.css">
+    <link rel="stylesheet" href="assets\css\registerstyle.css">
     <link rel="stylesheet" href="assets\css\shop.css">
     <link rel="stylesheet" href="assets\css\item.css">
     <link rel="stylesheet" href="assets\css\account.css">
