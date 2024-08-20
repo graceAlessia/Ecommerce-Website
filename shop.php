@@ -39,7 +39,7 @@ if (isset($_POST['search'])) {
 
             <!-- Search Section (2 columns wide) -->
             <div id="search" class="col-lg-2 col-md-3 col-sm-12">
-                <p>Search Items</p>
+                <h4 class="text-uppercase">Search Items</h4>
                 <hr>
 
 
@@ -89,14 +89,14 @@ if (isset($_POST['search'])) {
 
             <!-- Shop Section (10 columns wide) -->
             <div id="shop" class="col-lg-10 col-md-9 col-sm-12">
-                <h3>Our featured products</h3>
-                <hr class="mx-auto">
-                <p>Here you can check out our featured products</p>
+                <h4 class="text-uppercase">Our products</h4>
+                <hr>
+                <p>Here you can check out our amazing products</p>
                 <div class="row">
 
                     <?php while ($row = $products->fetch_assoc()) { ?>
-                        <div onclick="window.location.href='item.html';" class="product text-center col-lg-3 col-md-4 col-sm-12 mb-4">
-                            <img class="img-fluid item-img mb-3" style="height: 300px; !important" src="assets\imgs\<?php echo $row['product_image']; ?>">
+                        <div onclick="window.location.href='item.html';" class="Shop text-center col-lg-3 col-md-4 col-sm-12 mb-4">
+                            <img class="img-fluid item-img mb-3" src="assets\imgs\<?php echo $row['product_image']; ?>">
                             <div class="star">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>

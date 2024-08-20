@@ -14,18 +14,18 @@
     margin-right: 40px;
 }
 
-#checkout-form #checkout-btn{
+#checkout-form .checkout-btn{
+    background-color:#1A2130;
+    font-family: "Poppins", sans-serif;
     color: white;
-    background-color:  rgb(3, 3, 42);
-    font-family: "Montserrat", sans-serif;
+    border-color: transparent;
+    width: 100px;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 5px 5px;
-    font-size: 15px;
-    transition: background-color 0.3s ease;
-    border-color: transparent;
 }
 
-#checkout-form #checkout-btn:hover{
-    background-color:  rgb(20, 20, 67);
+#checkout-form .checkout-btn:hover{
+    transform: translateY(0px);
+    opacity: 1;
+    background-color: #7e90b3;
 }

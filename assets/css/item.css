@@ -14,20 +14,40 @@
     height: 40px;
     padding-left: 10px;
     font-size: 16px;
-    margin-right: 10px;
+    margin-right: 10px; /* Keep the spacing between the input and the button */
 }
 
-.item input:focus{
+.item input:focus {
     outline: none;
 }
 
-.item .buy-btn{
-    background-color: coral;
-    opacity: 1;
-    transition: 0.4s all;
+.item .add-to-cart {
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(3, 3, 42);
     border-color: white;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    transform: translateY(0); /* Start in the visible state */
+    display: inline-block; /* Ensure it's inline with the input */
+    white-space: nowrap; /* Prevents button text from wrapping */
+}
+.item .buy-btn {
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(3, 3, 42);
+    transform: translateY(50px);
+    opacity: 0;
+    border-color: white;
+    transition: 0.3s all;;
+    color: white;
+    transform: translateY(0); /* Start in the visible state */
+    display: inline-block; /* Ensure it's inline with the input */
+    white-space: nowrap; /* Prevents button text from wrapping */
 }
 
-.item .buy-btn:hover{
-    background-color: black;
+.item .buy-btn:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+    opacity: 0.9; /* Slight transparency on hover */
 }

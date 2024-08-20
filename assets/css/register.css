@@ -4,7 +4,7 @@
     margin: 5px auto;
     text-align: center;
     padding: 20px;
-    border-top: 1px solid coral;
+    border-top: 1px solid#1A2130;
 }
 
 #register-form input{
@@ -13,11 +13,11 @@
 }
 
 #register-form #signup-btn{
-    background-color: coral;
+    background-color: #1A2130;
     color: aliceblue;
     border-color: transparent;
 }
 
 #register-form #login-url{
-    color: coral;
+    color: white;
 }

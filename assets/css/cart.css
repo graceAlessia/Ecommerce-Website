@@ -1,5 +1,4 @@
 
-
 .cart table {
     width: 100%;
     border-collapse: collapse;
@@ -26,7 +25,7 @@
     background-color: white;
     border: none;
     width: 100%;
-    color: coral;
+    color:#1A2130;
     font-size: 14px;
     text-align: left;
 
@@ -40,7 +39,7 @@
     text-align: left;
     padding: 5px 10px;
     color: aliceblue;
-    background-color: coral;
+    background-color: #1A2130;
 }
 
 .cart td{
@@ -57,7 +56,7 @@
     background-color: white;
     border: none;
     width: 100%;
-    color: coral;
+    color:rgb(3, 3, 42);
     font-size: 14px;
     text-align: left;
 }
@@ -70,7 +69,7 @@
 .cart-total table{
     width: 100%;
     max-width: 500px;
-    border-top: 3px solid coral;
+    border-top: 3px solid #1A2130;
 }
 
 td:last-child{
@@ -95,9 +94,39 @@ th:last-child{
 }
 
 .checkout-container .btn{
-    background: rgb(3, 3, 42);
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(3, 3, 42);
+    transform: translateY(50px);
+    opacity: 0;
+    border-color: white;
+    transition: 0.3s all;;
     color: white;
-    font-family: "Montserrat", sans-serif;
+}
+.checkout-container .btn:hover{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.cart .checkout-btn{
+    background-color:#1A2130;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    border-color: transparent;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+
+
+.cart .checkout-btn:hover{
+    transform: translateY(0px);
+    opacity: 1;
+    background-color: #7e90b3;
+}
+/* .cart .checkout-container input .checkout-btn{
+    background: #1A2130;
+    color: white;
+    font-family: "Poppins", sans-serif;
     border-radius: 5px;
     padding: 5px 10px;
     margin: 5px 5px;
@@ -105,22 +134,13 @@ th:last-child{
     transition: background-color 0.3s ease;
     border-color: transparent;
 }
-.checkout-container .btn:hover{
-    background-color: #f39576;
-}
-.cart .checkout-btn{
-    background-color: coral;
-    color: white;
-    border-color: transparent;
-    width: 100px;
-}
 
 
-/* .cart input{
+.cart input{
     text-decoration: none;
     font-size: 14px;
     height: 40px;
     padding-left: 10px;
     font-size: 16px;
     margin-right: 10px;
-} */
+}  */

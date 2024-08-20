@@ -6,10 +6,10 @@
 <!--HOME-->
 <section id="home">
     <div class="container">
-        <h5>Welcome to Cozy Shark</h5>
+        <h4>Welcome to Cozy Shark</h4>
         <h1><span>Best Deals</span></h1>
-        <p>Eshop offers the best products for the most affordable prices</p>
-        <button class="main-button mt-3">Shop Now</button>
+        <h5>Eshop offers the best products for the most affordable prices</h5>
+        <a href="shop.php"><button class="main-button mt-3">Shop Now</button></a>
     </div>
 </section>
 
@@ -59,9 +59,11 @@
     </section> -->
 
 <!--Featured-->
+
+
 <section id="featured" class="my-5 pb-5">
     <div class="container text-center mt-5 py-5">
-        <h3>Our featured products</h3>
+        <h3 class="text-uppercase">Our featured products</h3>
         <hr class="mx-auto">
         <p>Here you can check out our featured products</p>
     </div>
@@ -82,7 +84,7 @@
                 <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
                 <h4 class="p-price"><?php echo $row['product_price']; ?></h4>
                 <a href="<?php echo "item.php?product_id=" . $row['product_id']; ?>">
-                    <button class="buy-btn">Buy Now</button>
+                    <button class="btn buy-btn">Buy Now</button>
                 </a>
 
             </div>
@@ -98,14 +100,15 @@
     <div class="container">
         <h4>MID SEASON SALE</h4>
         <h1>Autumn Collection <br> UP to 30% OFF</h1>
-        <button class="text-uppercase">Shop Now</button>
+        <a href="shop.php"><button class="main-button mt-3">Shop Now</button></a>
+
     </div>
 </section>
 
 <!--Clothes-->
 <section id="featured" class="my-5 pb-5">
     <div class="container text-center mt-5 py-5">
-        <h3>Dress & Coats</h3>
+        <h3 class="text-uppercase">Shirts and Hoodies</h3>
         <hr class="mx-auto">
         <p>Here you can check out our amazing cloths</p>
     </div>
@@ -126,7 +129,7 @@
                 <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
                 <h4 class="p-price"><?php echo $row['product_price']; ?></h4>
                 <a href="<?php echo "item.php?product_id=" . $row['product_id']; ?>">
-                    <button class="buy-btn">Buy Now</button>
+                    <button class="btn buy-btn">Buy Now</button>
                 </a>
 
             </div>

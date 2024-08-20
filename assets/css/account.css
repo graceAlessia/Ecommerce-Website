@@ -12,12 +12,12 @@
 
 #account-form #change-pass-btn{
     color: white;
-    background-color: coral;
+    background-color: #1A2130;
     border-color: transparent;
 }
 
 .account-info #order-btn, #logout-btn{
-    color: coral;
+    color: #1A2130;
     text-decoration: none;
 }
 
@@ -52,7 +52,7 @@
 .orders th{
     padding: 5px 20px;
     color: white;
-    background-color: coral;
+    background-color: #1A2130;
     /* text-align: left; */
 }
 
@@ -68,5 +68,5 @@
 
 .orders .order-deatails-btn{
     color: white;
-    background-color: coral;
+    background-color: #1A2130;
 }

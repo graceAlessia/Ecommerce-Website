@@ -40,7 +40,7 @@ h6{
 }
 
 button{
-    background: rgb(3, 3, 42);
+    background-color: #1A2130;
     color: white;
     font-family: "Poppins", sans-serif;
     border-radius: 5px;
@@ -52,10 +52,10 @@ button{
 }
 
 button:hover{
-    background-color: aqua;
+    background-color: rgba(255, 255, 255, 0.233);
 }
 .btn{
-    background: rgb(3, 3, 42);
+    background: #1A2130;
     color: white;
     font-family: "Poppins", sans-serif;
     border-radius: 5px;
@@ -67,7 +67,8 @@ button:hover{
 }
 
 .btn:hover{
-    background-color: aqua;
+    background-color:#7e90b3;
+    color: white;
 }
 
 .navbar{
@@ -95,7 +96,7 @@ button:hover{
 .navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar i:hover{
- color:aqua;
+ color:#7e90b3;
 }
 
 .navbar i {
@@ -170,13 +171,28 @@ button:hover{
 
 
 #home .main-button {
-    background: rgba(255, 255, 255, 0.233);
-    font-family: "Poppins", sans-serif;
-    border-color: transparent;
-    border-radius: 25px;
-    padding: 10px 40px;
-    font-size: 15px;
-    transition: background-color 0.3s ease;}
+        background: rgba(255, 255, 255, 0.233);
+        font-family: "Poppins", sans-serif;
+        border-color: transparent;
+        border-radius: 25px;
+        padding: 10px 40px;
+        font-size: 15px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        color: black;
+    }
+    
+    #home .main-button:hover {
+        /* background: rgba(255, 255, 255, 0.5); Lighter background */
+        box-shadow: 0px 4px 15px rgba(35, 35, 35, 0.2); /* Add shadow */
+    }
+    
+
+
+#home .main-button:hover {
+    background: rgba(255, 255, 255, 0.5); /* Lighter background */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
 
 #home .mt-3 {
     margin-top: 1rem !important;}
@@ -311,7 +327,7 @@ hr{
 }
 
 #banner button:hover{
-    background-color: rgb(158, 146, 146);
+    background-color: #7e90b3;
 }
 
 footer{
@@ -333,7 +349,7 @@ footer li a{
     text-decoration: none;
 }
 footer li a:hover{
-    color:aqua;
+    color:rgba(255, 255, 255, 0.233);
 }
 
 footer .copyright a{
@@ -351,7 +367,7 @@ footer .copyright a{
 
 footer .copyright a:hover{
     color:#fff;
-    background-color: #00ffff;
+    background-color: #7e90b3;
 }
 
 footer p{

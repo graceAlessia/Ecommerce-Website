@@ -5,6 +5,7 @@ include('server\dbcon.php');
 
 if (isset($_GET['product_id'])) {
 
+
     $product_id = $_GET['product_id'];
 
     // Prepare the SQL statement
@@ -58,8 +59,8 @@ if (isset($_GET['product_id'])) {
 
 
             <div class="col-lg-6 col-md-12 col-12">
-                <h6>Men/Clothes</h6>
-                <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
+                <h6 class="text-uppercase"><?php echo $row['product_category']; ?></h6>
+                <h4 class="py-4"><?php echo $row['product_name']; ?></h4>
                 <h2>$<?php echo $row['product_price']; ?></h2>
                 <form method="POST" action="cart.php">
                     <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
@@ -67,7 +68,7 @@ if (isset($_GET['product_id'])) {
                     <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
                     <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
                     <input type="number" name="product_quantity" value="1" />
-                    <button class="buy-btn" type="submit" name="add_to_cart">Add To Cart</button>
+                    <button class="add-to-cart" type="submit" name="add_to_cart">Add To Cart</button>
                 </form>
                 <h4 class="mt-5 mb-5">Product Details</h4>
                 <span><?php echo $row['product_description']; ?>
@@ -86,7 +87,7 @@ if (isset($_GET['product_id'])) {
 <!--Related products-->
 <section id="related-products" class="my-5 pb-5">
     <div class="container text-center mt-5 py-5">
-        <h3>Other related Products</h3>
+        <h4 class="text-uppercase">Other related Products</h4>
         <hr class="mx-auto">
     </div>
     <div class="row mx-auto container-fluid">
@@ -140,7 +141,7 @@ if (isset($_GET['product_id'])) {
             </div>
             <h5 class="p-name">Sports Shoes</h5>
             <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
+            <button class="btn buy-btn">Buy Now</button>
         </div>
 
     </div>

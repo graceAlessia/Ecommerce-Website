@@ -168,7 +168,7 @@
 
         <div class="checkout-container">
             <form method="POST" action="checkout.php">
-                <input type="submit" class="btn checkout-btn" name="checkout" value="Check Out" />
+                <input type="submit" class="button checkout-btn" name="checkout" value="Check Out" />
             </form>
 
         </div>

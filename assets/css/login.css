@@ -4,7 +4,7 @@
     margin: 5px auto;
     text-align: center;
     padding: 20px;
-    border-top: 1px solid coral;
+    border-top: 1px solid rgb(3, 3, 42);
 }
 
 #login-form input{
@@ -12,12 +12,12 @@
     margin: 5px auto;
 }
 
-#login-form #login-btn{
-    background-color: coral;
+/* #login-form #login-btn{
+    background-color: rgb(3, 3, 42);
     color: aliceblue;
     border-color: transparent;
 }
 
 #login-form #register-url{
-    color: coral;
-}
+    color: white;
+} */

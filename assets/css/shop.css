@@ -1,13 +1,29 @@
 
-/* Products */
 
-
-#shop img{
+.Shop{
+cursor: pointer;
+    margin-bottom: 2rem;
+    height: fit-content;
+}
+.Shop img{
     transition: 0.3s all;
     height: 300px;
 }
 
-#shop:hover img{
+.Shop:hover img{
     opacity: 0.7;
 }
+.buy-btn{
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(3, 3, 42);
+    transform: translateY(50px);
+    opacity: 0;
+    border-color: white;
+    transition: 0.3s all;;
+    color: white;
+}
 
+.Shop:hover .buy-btn{
+    transform: translateY(0px);
+    opacity: 1;
+}
