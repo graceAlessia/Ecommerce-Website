@@ -7,7 +7,7 @@ cursor: pointer;
 }
 .Shop img{
     transition: 0.3s all;
-    height: 300px;
+    height: 270px;
 }
 
 .Shop:hover img{

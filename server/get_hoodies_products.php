@@ -2,7 +2,7 @@
 
 include('dbcon.php');
 
-$stmt = $conn->prepare("SELECT * FROM products WHERE product_category='hoodies' LIMIT 4");
+$stmt = $conn->prepare("SELECT * FROM products WHERE product_category IN ('hoodies', 'shirts') ORDER BY RAND() LIMIT 8");
 
 $stmt->execute();
 
