@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2024 at 11:48 AM
+-- Generation Time: Aug 23, 2024 at 02:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ict_project`
+-- Database: `cozy_shark`
 --
 
 -- --------------------------------------------------------
@@ -32,11 +32,20 @@ CREATE TABLE `orders` (
   `order_cost` decimal(6,2) NOT NULL,
   `order_status` varchar(100) NOT NULL DEFAULT 'on_hold',
   `user_id` int(11) NOT NULL,
-  `user_phone` int(11) NOT NULL,
+  `user_phone` varchar(15) NOT NULL,
   `user_city` varchar(255) NOT NULL,
   `user_address` varchar(255) NOT NULL,
   `order_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user_phone`, `user_city`, `user_address`, `order_date`) VALUES
+(1, 120.00, 'Not Paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:30:07'),
+(2, 120.00, 'Not Paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:42:52'),
+(3, 120.00, 'Not Paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:47:33');
 
 -- --------------------------------------------------------
 
@@ -49,10 +58,19 @@ CREATE TABLE `order_items` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_name` varchar(255) NOT NULL,
+  `product_price` decimal(6,2) NOT NULL,
+  `product_quantity` int(11) NOT NULL,
   `product_image` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `order_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `order_items`
+--
+
+INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, `product_price`, `product_quantity`, `product_image`, `user_id`, `order_date`) VALUES
+(1, 3, 1, 'Hoodies1', 120.00, 1, 'Hoodies1.jpg', 1, '2024-08-23 18:47:33');
 
 -- --------------------------------------------------------
 
@@ -74,6 +92,19 @@ CREATE TABLE `products` (
   `product_color` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`, `product_price`, `product_special_offer`, `product_color`) VALUES
+(1, 'Hoodies1', 'hoodies', 'warm hoodies', 'Hoodies1.jpg', 'Hoodies2.jpg', 'Hoodies1.jpg', 'Hoodies2.jpg', 120.00, 15, 'white/cream'),
+(2, 'Hoodies2', 'hoodies', 'warm hoodies', 'Hoodies2.jpg', 'Hoodies1.jpg', 'Hoodies2.jpg', 'Hoodies1.jpg', 120.00, 15, 'cream/white'),
+(3, 'Hoodies3', 'hoodies', 'Hoodies3.PNG', 'Hoodies4.PNG', 'Hoodies3.PNG', 'Hoodies4.PNG', 'New designs, simple and cool!', 130.00, 10, 'Maroon, Ivory'),
+(4, 'Hoodies4', 'hoodies', 'New designs! Cool and simple!', 'Hoodies4.PNG', 'Hoodies3.PNG', 'Hoodies4.PNG', 'Hoodies3.PNG', 130.00, 10, 'Ivory, Maroon'),
+(5, 'Shirt1', 'shirts', 'For any Season!', 'Shirt1.jpg', 'Shirt1.jpg', 'Shirt1.jpg', 'Shirt1.jpg', 110.00, 30, 'Yellow'),
+(6, 'Shirt2', 'shirts', 'New released! ', 'Shirt2.jpg', 'Shirt3.jpg', 'Shirt2.jpg', 'Shirt3.jpg', 100.00, 10, 'green, cream '),
+(7, 'Shirt3', 'shirts', 'New released!', 'Shirt3.jpg', 'Shirt2.jpg', 'Shirt3.jpg', 'Shirt2.jpg', 100.00, 10, 'cream, green ');
+
 -- --------------------------------------------------------
 
 --
@@ -86,6 +117,13 @@ CREATE TABLE `users` (
   `user_email` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
+(1, 'Kiara', 'dev@gmail.com', 'eaeb8c8f1bf9e133759e7e6f1106b614');
 
 --
 -- Indexes for dumped tables
@@ -124,25 +162,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
