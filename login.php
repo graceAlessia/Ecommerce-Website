@@ -55,7 +55,11 @@ if (isset($_POST['login_btn'])) {
     <div class="container text-center mt-3 pt-5">
         <h2 class="form-weight-bold">Login</h2>
         <hr class="mx-auto">
+        <?php if (isset($_GET['message'])) { ?>
+            <p class="text-center" style="color: red;"><?php echo $_GET['message']; ?></p>
+        <?php } ?>
     </div>
+
     <div class="mx-auto container">
         <form id="login-form" method="POST" action="login.php">
             <p style="color: red;" class="text-center"><?php if (isset($_GET['error'])) {

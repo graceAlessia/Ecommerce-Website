@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2024 at 10:30 AM
+-- Generation Time: Aug 26, 2024 at 04:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,7 +64,9 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user_phone`, `user_city`, `user_address`, `order_date`) VALUES
 (3, 120.00, 'paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:47:33'),
-(4, 220.00, 'delivered', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 19:11:59');
+(4, 220.00, 'delivered', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 19:11:59'),
+(5, 120.00, 'delivered', 3, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-26 20:54:41'),
+(6, 120.00, 'not paid', 3, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-26 21:05:27');
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,9 @@ CREATE TABLE `order_items` (
 
 INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, `product_price`, `product_quantity`, `product_image`, `user_id`, `order_date`) VALUES
 (1, 3, 1, 'Hoodies1', 120.00, 1, 'Hoodies1.jpg', 1, '2024-08-23 18:47:33'),
-(2, 4, 5, 'Shirt1', 110.00, 2, 'Shirt1.jpg', 1, '2024-08-23 19:11:59');
+(2, 4, 5, 'Shirt1', 110.00, 2, 'Shirt1.jpg', 1, '2024-08-23 19:11:59'),
+(3, 5, 1, 'Hoodies 1', 120.00, 1, 'Hoodies1.jpg', 3, '2024-08-26 20:54:41'),
+(4, 6, 2, 'Hoodies2', 120.00, 1, 'Hoodies2.jpg', 3, '2024-08-26 21:05:27');
 
 -- --------------------------------------------------------
 
@@ -127,7 +131,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_category`, `produ
 (8, 'Polo Shirt1', 'polo_shirts', 'Good quality fabrics!', 'PoloShirt1.jpg', 'PoloShirt2.jpg', 'PoloShirt3.jpg', 'PoloShirt1.jpg', 90.00, 5, 'Khaki Brown'),
 (9, 'Polo Shirt 2 ', 'polo_shirts', 'Good quality fabrics!', 'PoloShirt2.jpg', 'PoloShirt3.jpg', 'PoloShirt1.jpg', 'PoloShirt2.jpg', 90.00, 5, 'Dark Grey'),
 (10, 'Polo Shirt 3 ', 'polo_shirts', 'Good quality fabrics!', 'PoloShirt3.jpg', 'PoloShirt1.jpg', 'PoloShirt2.jpg', 'PoloShirt3.jpg', 90.00, 5, 'Brown'),
-(12, 'Naomi', 'polo_shirts', 'polo shirts', 'Naomi1.jpg', 'Naomi2.jpg', 'Naomi3.jpg', 'Naomi4.jpg', 100.00, 10, 'brown');
+(12, 'Hoodies', 'featured', 'New released!', 'Hoodies1.jpg', 'Hoodies2.jpg', 'Hoodies3.jpg', 'Hoodies4.jpg', 120.00, 50, 'Blue');
 
 -- --------------------------------------------------------
 
@@ -148,7 +152,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
 (1, 'Kiara', 'dev@gmail.com', 'eaeb8c8f1bf9e133759e7e6f1106b614'),
-(2, 'Naomi', 'test@gmail.com', '596258e810183f048b691bef0ee10693');
+(2, 'Naomi', 'test@gmail.com', '596258e810183f048b691bef0ee10693'),
+(3, 'Grace', 'grace@gmail.com', '89b26198f60f5805bbe93362c7186f8f');
 
 --
 -- Indexes for dumped tables
@@ -199,13 +204,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -217,7 +222,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

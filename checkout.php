@@ -1,16 +1,22 @@
 <?php
 include('layouts/header.php');
 
-if (!empty($_SESSION['cart'])) {
-    //let user in only from checkout button
-
-    //send user to homepage  
-} else {
-    header('location: index.php');
+// Check if the user is logged in
+if (!isset($_SESSION['logged_in'])) {
+    // Redirect to the login page with a message
+    header('location: login.php?message=Please log in in order to checkout.');
+    exit();
 }
 
+// Check if the cart is empty
+if (empty($_SESSION['cart'])) {
+    // Redirect to the homepage
+    header('location: index.php');
+    exit();
+}
 ?>
-<?php include('layouts/header.php') ?>
+
+<?php include('layouts/header.php'); ?>
 
 <!--Checkout-->
 <section class="my-5 py-5">
@@ -24,13 +30,6 @@ if (!empty($_SESSION['cart'])) {
                 <?php if (isset($_GET['message'])) {
                     echo $_GET['message'];
                 } ?>
-
-                <?php if (isset($_GET['message'])) { ?>
-                    <a class="btn" href="login.php">Login</a>
-                <?php } ?>
-
-
-
             </p>
 
             <div class="form-group checkout-small-element">
@@ -64,7 +63,4 @@ if (!empty($_SESSION['cart'])) {
     </div>
 </section>
 
-
-
-
-<?php include('layouts/footer.php') ?>
+<?php include('layouts/footer.php'); ?>
