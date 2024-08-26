@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-
-
 session_start();
+
+// include('../server/dbcon.php');
 ?>
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2024 at 02:34 PM
+-- Generation Time: Aug 26, 2024 at 10:30 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `cozy_shark`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(255) NOT NULL,
+  `admin_email` text NOT NULL,
+  `admin_password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
+(1, 'Kiara', 'kiara@gmail.com', '0302167479431f9d2e7602129d2938a2');
 
 -- --------------------------------------------------------
 
@@ -43,9 +63,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user_phone`, `user_city`, `user_address`, `order_date`) VALUES
-(1, 120.00, 'Not Paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:30:07'),
-(2, 120.00, 'Not Paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:42:52'),
-(3, 120.00, 'Not Paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:47:33');
+(3, 120.00, 'paid', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 18:47:33'),
+(4, 220.00, 'delivered', 1, '9874835682', 'Yangon', 'U Yae Khel', '2024-08-23 19:11:59');
 
 -- --------------------------------------------------------
 
@@ -70,7 +89,8 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, `product_price`, `product_quantity`, `product_image`, `user_id`, `order_date`) VALUES
-(1, 3, 1, 'Hoodies1', 120.00, 1, 'Hoodies1.jpg', 1, '2024-08-23 18:47:33');
+(1, 3, 1, 'Hoodies1', 120.00, 1, 'Hoodies1.jpg', 1, '2024-08-23 18:47:33'),
+(2, 4, 5, 'Shirt1', 110.00, 2, 'Shirt1.jpg', 1, '2024-08-23 19:11:59');
 
 -- --------------------------------------------------------
 
@@ -97,13 +117,17 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`, `product_price`, `product_special_offer`, `product_color`) VALUES
-(1, 'Hoodies1', 'hoodies', 'warm hoodies', 'Hoodies1.jpg', 'Hoodies2.jpg', 'Hoodies1.jpg', 'Hoodies2.jpg', 120.00, 15, 'white/cream'),
-(2, 'Hoodies2', 'hoodies', 'warm hoodies', 'Hoodies2.jpg', 'Hoodies1.jpg', 'Hoodies2.jpg', 'Hoodies1.jpg', 120.00, 15, 'cream/white'),
+(1, 'Hoodies 1', 'hoodies', 'warm hoodies', 'Hoodies1.jpg', 'Hoodies2.jpg', 'Hoodies1.jpg', 'Hoodies2.jpg', 120.00, 10, 'white/cream'),
+(2, 'Hoodies2', 'shirts', 'warm hoodies', 'Hoodies2.jpg', 'Hoodies1.jpg', 'Hoodies2.jpg', 'Hoodies1.jpg', 120.00, 0, 'cream/white'),
 (3, 'Hoodies3', 'hoodies', 'Hoodies3.PNG', 'Hoodies4.PNG', 'Hoodies3.PNG', 'Hoodies4.PNG', 'New designs, simple and cool!', 130.00, 10, 'Maroon, Ivory'),
 (4, 'Hoodies4', 'hoodies', 'New designs! Cool and simple!', 'Hoodies4.PNG', 'Hoodies3.PNG', 'Hoodies4.PNG', 'Hoodies3.PNG', 130.00, 10, 'Ivory, Maroon'),
 (5, 'Shirt1', 'shirts', 'For any Season!', 'Shirt1.jpg', 'Shirt1.jpg', 'Shirt1.jpg', 'Shirt1.jpg', 110.00, 30, 'Yellow'),
 (6, 'Shirt2', 'shirts', 'New released! ', 'Shirt2.jpg', 'Shirt3.jpg', 'Shirt2.jpg', 'Shirt3.jpg', 100.00, 10, 'green, cream '),
-(7, 'Shirt3', 'shirts', 'New released!', 'Shirt3.jpg', 'Shirt2.jpg', 'Shirt3.jpg', 'Shirt2.jpg', 100.00, 10, 'cream, green ');
+(7, 'Shirt3', 'shirts', 'New released!', 'Shirt3.jpg', 'Shirt2.jpg', 'Shirt3.jpg', 'Shirt2.jpg', 100.00, 10, 'cream, green '),
+(8, 'Polo Shirt1', 'polo_shirts', 'Good quality fabrics!', 'PoloShirt1.jpg', 'PoloShirt2.jpg', 'PoloShirt3.jpg', 'PoloShirt1.jpg', 90.00, 5, 'Khaki Brown'),
+(9, 'Polo Shirt 2 ', 'polo_shirts', 'Good quality fabrics!', 'PoloShirt2.jpg', 'PoloShirt3.jpg', 'PoloShirt1.jpg', 'PoloShirt2.jpg', 90.00, 5, 'Dark Grey'),
+(10, 'Polo Shirt 3 ', 'polo_shirts', 'Good quality fabrics!', 'PoloShirt3.jpg', 'PoloShirt1.jpg', 'PoloShirt2.jpg', 'PoloShirt3.jpg', 90.00, 5, 'Brown'),
+(12, 'Naomi', 'polo_shirts', 'polo shirts', 'Naomi1.jpg', 'Naomi2.jpg', 'Naomi3.jpg', 'Naomi4.jpg', 100.00, 10, 'brown');
 
 -- --------------------------------------------------------
 
@@ -123,11 +147,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
-(1, 'Kiara', 'dev@gmail.com', 'eaeb8c8f1bf9e133759e7e6f1106b614');
+(1, 'Kiara', 'dev@gmail.com', 'eaeb8c8f1bf9e133759e7e6f1106b614'),
+(2, 'Naomi', 'test@gmail.com', '596258e810183f048b691bef0ee10693');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `orders`
@@ -159,28 +190,34 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

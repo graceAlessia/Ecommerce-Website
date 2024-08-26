@@ -4,8 +4,8 @@
 .bd-placeholder-img{
     font-size: 1.123rem;
     text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
+    /* -webkit-user-select: none;
+    -moz-user-select: none; */
 }
 
 @media (min-width:768px ){

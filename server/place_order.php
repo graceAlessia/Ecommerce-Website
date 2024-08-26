@@ -24,7 +24,7 @@ if (!isset($_SESSION['logged_in'])) {
         $city = $_POST['city'];
         $address = $_POST['address'];
         $order_cost = $_SESSION['total'];
-        $order_status = "Not Paid";
+        $order_status = "not paid";
         $user_id = $_SESSION['user_id']; //linking with register page
 
         date_default_timezone_set('Asia/Yangon'); // Set the time zone to Myanmar

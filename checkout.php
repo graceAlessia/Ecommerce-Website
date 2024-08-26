@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+include('layouts/header.php');
 
 if (!empty($_SESSION['cart'])) {
     //let user in only from checkout button

@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 include('server/dbcon.php');
 include('layouts/header.php');
 

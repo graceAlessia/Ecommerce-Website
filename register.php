@@ -1,8 +1,6 @@
 <?php
-session_start();
-
 include('server/dbcon.php');
-
+include('layouts/header.php');
 
 //if user has already registered, then take user to account page.
 if (isset($_SESSION['logged_in'])) {

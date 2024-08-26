@@ -2,7 +2,7 @@
 
 // Ensure $conn is already initialized and represents a valid MySQLi connection
 include('server\dbcon.php');
-
+include('layouts/header.php');
 if (isset($_GET['product_id'])) {
 
 

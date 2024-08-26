@@ -1,5 +1,5 @@
    <?php
-    session_start();
+    include('layouts/header.php');
 
     if (isset($_POST['add_to_cart'])) {
 
@@ -121,37 +121,40 @@
                <th>Quantity</th>
                <th>Subtotal</th>
            </tr>
-           <?php foreach ($_SESSION['cart'] as $key => $value) { ?>
-               <tr>
-                   <td>
-                       <div class="product-info">
-                           <img src="assets/imgs/<?php echo $value['product_image']; ?>">
-                           <div class="product-details">
-                               <p class="mb-0"><?php echo $value['product_name']; ?></p>
-                               <small><span>$</span><?php echo $value['product_price']; ?></small>
+           <?php if (isset($_SESSION['cart'])) { ?>
 
-                               <form method="POST" action="cart.php">
-                                   <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>" />
-                                   <input type="submit" name="remove_product" value="Remove" class="remove-btn width=100%" />
-                               </form>
+               <?php foreach ($_SESSION['cart'] as $key => $value) { ?>
+                   <tr>
+                       <td>
+                           <div class="product-info">
+                               <img src="assets/imgs/<?php echo $value['product_image']; ?>">
+                               <div class="product-details">
+                                   <p class="mb-0"><?php echo $value['product_name']; ?></p>
+                                   <small><span>$</span><?php echo $value['product_price']; ?></small>
 
+                                   <form method="POST" action="cart.php">
+                                       <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>" />
+                                       <input type="submit" name="remove_product" value="Remove" class="remove-btn width=100%" />
+                                   </form>
+
+                               </div>
                            </div>
-                       </div>
-                   </td>
-                   <td>
+                       </td>
+                       <td>
 
-                       <form method="POST" action="cart.php" class="container row">
-                           <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
-                           <input type="number" name="product_quantity" class="quantity-btn" value="<?php echo $value['product_quantity'] ?>" />
-                           <input type="submit" name="edit_quantity" class="edit-btn" value="Edit">
-                       </form>
+                           <form method="POST" action="cart.php" class="container row">
+                               <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
+                               <input type="number" name="product_quantity" class="quantity-btn" value="<?php echo $value['product_quantity'] ?>" />
+                               <input type="submit" name="edit_quantity" class="edit-btn" value="Edit">
+                           </form>
 
-                   </td>
-                   <td>
-                       <span>$</span>
-                       <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
-                   </td>
-               </tr>
+                       </td>
+                       <td>
+                           <span>$</span>
+                           <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
+                       </td>
+                   </tr>
+               <?php } ?>
            <?php } ?>
 
 
@@ -164,7 +167,9 @@
                     </tr> -->
                <tr>
                    <td>Total</td>
-                   <td>$<?php echo $_SESSION['total']; ?></td>
+                   <?php if (isset($_SESSION['cart'])) { ?> //cart or total
+                       <td>$<?php echo $_SESSION['total']; ?></td>
+                   <?php } ?>
                </tr>
            </table>
        </div>

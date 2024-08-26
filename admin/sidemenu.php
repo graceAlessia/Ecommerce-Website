@@ -27,13 +27,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="add_products.php">
+                <a class="nav-link active" aria-current="page" href="add_product.php">
                     <span data-feather="home"></span>
-                    Create Products
+                    Add New Products
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="nav-link active" aria-current="page" href="help.php">
                     <span data-feather="layers"></span>
                     Help
                 </a>

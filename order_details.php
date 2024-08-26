@@ -1,6 +1,6 @@
 <?php
 include('server/dbcon.php');
-
+include('layouts/header.php');
 if (isset($_POST['order_details_btn']) && isset($_POST['order_id'])) {
     $order_id = $_POST['order_id'];
     $order_status = $_POST['order_status'];
@@ -66,7 +66,7 @@ function calculateTotalOrderPrice($order_details)
         <?php } ?>
     </table>
 
-    <?php if ($order_status == "Not Paid") { ?>
+    <?php if ($order_status == "not paid") { ?>
         <form style="float: right;" method="POST" action="payment.php">
             <input type="hidden" name="order_total_price" value="<?php echo $order_total_price; ?>">
             <input type="hidden" name="order_status" value="<?php echo $order_status; ?>">
