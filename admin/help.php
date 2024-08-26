@@ -13,9 +13,10 @@
                     <div class="btn-group me-2"></div>
                 </div>
             </div>
-
+            <hr>
             <div class="container">
-                <p>Please contact cozysharkadmins@gmail.com></p>
+                <p>Please contact -- cozysharkheadoffice@gmail.com --</p>
+
                 <p>Contact No. 09123456789</p>
 
 

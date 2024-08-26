@@ -17,7 +17,50 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <style>
+        .pagination .page-item {
+            margin: 0 5px;
+            /* Optional: space between pagination items */
+        }
 
+        .pagination .page-link {
+            color: white;
+            /* Default color for page links */
+            background-color: #1A2130;
+            /* Default background color */
+            border: 1px solid #dee2e6;
+            /* Border color */
+        }
+
+        .pagination .page-item.active .page-link {
+            color: #1A2130;
+            /* Text color for the active page */
+            background-color: whitesmoke;
+            /* Background color for the active page */
+            border-color: #dee2e6;
+            /* Border color for the active page */
+        }
+
+        .pagination .page-item.disabled .page-link {
+            color: #6c757d;
+            /* Text color for disabled items */
+            background-color: #fff;
+            /* Background color for disabled items */
+            border-color: #dee2e6;
+            /* Border color for disabled items */
+        }
+
+        .pagination .page-link:hover {
+            color: white;
+            /* Text color on hover */
+            background-color: #6c757d;
+            /* Background color on hover */
+            border-color: #dee2e6;
+            /* Border color on hover */
+        }
+    </style>
+
+    </style>
 
 </head>
 

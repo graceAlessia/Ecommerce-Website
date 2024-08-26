@@ -87,7 +87,7 @@ if (isset($_GET['order_id'])) {
                                 </div>
 
                                 <div class="form-group mt-3">
-                                    <input type="submit" class="btn btn-primary" name="edit_order" value="Edit">
+                                    <input type="submit" class="btn btn-secondary" name="edit_order" value="Edit">
                                 </div>
                             <?php } ?>
                         <?php } else { ?>
