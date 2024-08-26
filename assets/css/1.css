@@ -374,3 +374,8 @@ footer p{
     color: #999;
     font-size: 0.8rem; 
 }
+
+footer .logo:hover{
+    filter: brightness(0) saturate(100%) invert(59%) sepia(17%) saturate(574%) hue-rotate(181deg) brightness(93%) contrast(95%);
+   
+}

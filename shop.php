@@ -3,20 +3,29 @@
 include('server/dbcon.php');
 include('layouts/header.php');
 //search function
+
+// Search and Pagination Functionality
 if (isset($_POST['search'])) {
-    if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
-        // Determine page number after clicking a pagination button
-        $page_no = $_GET['page_no'];
-    } else {
-        // Default to page 1
-        $page_no = 1;
-    }
     $category = $_POST['category'];
     $price = $_POST['price'];
 
-    // Get the total number of records that match the search criteria
-    $stmt1 = $conn->prepare("SELECT COUNT(*) As total_records FROM products WHERE product_category=? AND product_price<=?");
-    $stmt1->bind_param('si', $category, $price);
+    // Determine the page number
+    if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
+        $page_no = $_GET['page_no'];
+    } else {
+        $page_no = 1;
+    }
+
+    // Get the total number of records based on the search criteria
+    if ($category == 'all') {
+        // If "All" category is selected, count all products under the specified price
+        $stmt1 = $conn->prepare("SELECT COUNT(*) As total_records FROM products WHERE product_price<=?");
+        $stmt1->bind_param('i', $price);
+    } else {
+        // Otherwise, count products in the selected category under the specified price
+        $stmt1 = $conn->prepare("SELECT COUNT(*) As total_records FROM products WHERE product_category=? AND product_price<=?");
+        $stmt1->bind_param('si', $category, $price);
+    }
     $stmt1->execute();
     $stmt1->bind_result($total_records);
     $stmt1->store_result();
@@ -27,17 +36,23 @@ if (isset($_POST['search'])) {
     $offset = ($page_no - 1) * $total_records_per_page;
     $total_no_of_pages = ceil($total_records / $total_records_per_page);
 
-    // Fetch the products for the current page
-    $stmt2 = $conn->prepare("SELECT * FROM products WHERE product_category=? AND product_price<=? LIMIT ?, ?");
-    $stmt2->bind_param('siii', $category, $price, $offset, $total_records_per_page);
+    // Fetch the products based on the search criteria
+    if ($category == 'all') {
+        $stmt2 = $conn->prepare("SELECT * FROM products WHERE product_price<=? LIMIT ?, ?");
+        $stmt2->bind_param('iii', $price, $offset, $total_records_per_page);
+    } else {
+        $stmt2 = $conn->prepare("SELECT * FROM products WHERE product_category=? AND product_price<=? LIMIT ?, ?");
+        $stmt2->bind_param('siii', $category, $price, $offset, $total_records_per_page);
+    }
     $stmt2->execute();
     $products = $stmt2->get_result();
 } else {
+    // Default behavior when no search is performed
+
+    // Determine the page number
     if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
-        // Determine page number after clicking a pagination button
         $page_no = $_GET['page_no'];
     } else {
-        // Default to page 1
         $page_no = 1;
     }
 
@@ -53,12 +68,13 @@ if (isset($_POST['search'])) {
     $offset = ($page_no - 1) * $total_records_per_page;
     $total_no_of_pages = ceil($total_records / $total_records_per_page);
 
-    // Fetch the products for the current page
+    // Fetch all products for the current page
     $stmt2 = $conn->prepare("SELECT * FROM products LIMIT ?, ?");
     $stmt2->bind_param('ii', $offset, $total_records_per_page);
     $stmt2->execute();
     $products = $stmt2->get_result();
 }
+
 
 ?>
 
@@ -77,6 +93,15 @@ if (isset($_POST['search'])) {
                     <div class="row mx-auto container">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <p>Category</p>
+                            <div class="form-check">
+                                <input class="form-check-input" value="all" type="radio" name="category" id="category_all" <?php if (isset($category) && $category == 'all') {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>>
+                                <label class="form-check-label" for="category_all">
+                                    All
+                                </label>
+                            </div>
+
                             <div class="form-check">
                                 <input class="form-check-input" value="polo_shirts" type="radio" name="category" id="category_one" <?php if (isset($category) && $category == 'polo_shirts') {
                                                                                                                                         echo 'checked';
@@ -103,19 +128,25 @@ if (isset($_POST['search'])) {
                             </div>
                         </div>
                     </div>
+
+
+
                     <div class="row mx-auto container mt-5">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <p>Price</p>
-                            <input type="range" name="price" value="<?php if (isset($price)) {
-                                                                        echo $price;
-                                                                    } else {
-                                                                        echo "100";
-                                                                    } ?>" class="form-range w-50" min="10" max="500" id="customRange2">
-                            <div class="w-50">
-                                <span style="float: left;">10</span>
-                                <span style="float: right;">500</span>
+                            <div class="d-flex justify-content-center mb-2">
+                                <span id="rangeValue" style="color: black;  "><?php echo isset($price) ? $price : '100'; ?>$</span>
+                            </div>
+                            <input type="range" style="background: black;" name="price" value="<?php echo isset($price) ? $price : '100'; ?>"
+                                class="form-range w-50" min="10" max="500" id="customRange2"
+                                oninput="updateRangeValue(this.value)">
+                            <div class="w-50 d-flex justify-content-between">
+                                <span>10</span>
+                                <span>500</span>
                             </div>
                         </div>
+
+
                     </div>
                     <div class="form-group my-3 mx-3">
                         <input type="submit" name="search" value="Search" class="btn">
@@ -203,5 +234,41 @@ if (isset($_POST['search'])) {
         </div>
     </div>
 </section>
+
+
+<script>
+    function updateRangeValue(value) {
+        document.getElementById('rangeValue').textContent = value + '$';
+    }
+</script>
+
+<style>
+    input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, #ff0000, #00ff00);
+        border-radius: 5px;
+        outline: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #4CAF50;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+</style>
 
 <?php include('layouts/footer.php');

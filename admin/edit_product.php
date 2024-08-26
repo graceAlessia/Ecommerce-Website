@@ -71,6 +71,7 @@ if (isset($_GET['product_id'])) {
                                 <option value="shirts" <?php if ($product['product_category'] == 'shirts') echo 'selected'; ?>>Shirts</option>
                                 <option value="polo_shirts" <?php if ($product['product_category'] == 'polo_shirts') echo 'selected'; ?>>Polo Shirts</option>
                                 <option value="hoodies" <?php if ($product['product_category'] == 'hoodies') echo 'selected'; ?>>Hoodies</option>
+                                <option value="featured" <?php if ($product['product_category'] == 'featured') echo 'selected'; ?>>Featured</option>
                             </select>
                         </div>
                         <div class="form-group mt-2">
