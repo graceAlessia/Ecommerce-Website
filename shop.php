@@ -131,13 +131,13 @@ if (isset($_POST['search'])) {
 
 
 
-                    <div class="row mx-auto container mt-5">
+                    <div class="price-bar row mx-auto container mt-5">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <p>Price</p>
                             <div class="d-flex justify-content-center mb-2">
                                 <span id="rangeValue" style="color: black;  "><?php echo isset($price) ? $price : '100'; ?>$</span>
                             </div>
-                            <input type="range" style="background: black;" name="price" value="<?php echo isset($price) ? $price : '100'; ?>"
+                            <input type="range" name="price" value="<?php echo isset($price) ? $price : '100'; ?>"
                                 class="form-range w-50" min="10" max="500" id="customRange2"
                                 oninput="updateRangeValue(this.value)">
                             <div class="w-50 d-flex justify-content-between">
@@ -241,34 +241,5 @@ if (isset($_POST['search'])) {
         document.getElementById('rangeValue').textContent = value + '$';
     }
 </script>
-
-<style>
-    input[type=range] {
-        -webkit-appearance: none;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(to right, #ff0000, #00ff00);
-        border-radius: 5px;
-        outline: none;
-    }
-
-    input[type=range]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 16px;
-        height: 16px;
-
-        cursor: pointer;
-        border-radius: 50%;
-    }
-
-    input[type=range]::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
-        background: #4CAF50;
-        cursor: pointer;
-        border-radius: 50%;
-    }
-</style>
 
 <?php include('layouts/footer.php');
