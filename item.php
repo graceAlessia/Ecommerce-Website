@@ -38,31 +38,35 @@ if (isset($_GET['product_id'])) {
     <?php while ($row = $product->fetch_assoc()) { ?>
 
         <div class="row mt-5">
-
-            <div class="col-lg-5 col-md-6 col-sm-12">
-                <img class="img-fluid w-100 pb-1" src="assets\imgs\<?php echo $row['product_image']; ?>" id="mainImg">
-                <div class="small-img-group my-2">
+            <!-- Small images -->
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <div class="small-img-group">
                     <div class="small-img-col">
-                        <img src="assets/imgs/<?php echo $row['product_image']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image']; ?>">
+                        <img src="assets/imgs/<?php echo $row['product_image']; ?>" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image']; ?>">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets/imgs/<?php echo $row['product_image2']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image2']; ?>">
+                        <img src="assets/imgs/<?php echo $row['product_image2']; ?>" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image2']; ?>">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets/imgs/<?php echo $row['product_image3']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image3']; ?>">
+                        <img src="assets/imgs/<?php echo $row['product_image3']; ?>" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image3']; ?>">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets/imgs/<?php echo $row['product_image4']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image4']; ?>">
+                        <img src="assets/imgs/<?php echo $row['product_image4']; ?>" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image4']; ?>">
                     </div>
                 </div>
-
             </div>
 
+            <!-- Main image -->
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <img class="img-fluid w-100" src="assets/imgs/<?php echo $row['product_image']; ?>" id="mainImg">
+            </div>
 
-            <div class="col-lg-6 col-md-12 col-12">
+            <!-- Product description -->
+            <div class="col-lg-5 col-md-12 col-12">
                 <h6 class="text-uppercase"><?php echo $row['product_category']; ?></h6>
                 <h4 class="py-4"><?php echo $row['product_name']; ?></h4>
                 <h2>$<?php echo $row['product_price']; ?></h2>
+
                 <form method="POST" action="cart.php">
                     <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
                     <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>" />
@@ -71,16 +75,19 @@ if (isset($_GET['product_id'])) {
                     <input type="number" name="product_quantity" value="1" />
                     <button class="btn add-to-cart" type="submit" name="add_to_cart">Add To Cart</button>
                 </form>
+
                 <h4 class="mt-5 mb-3">Product Details</h4>
                 <hr>
-                <h5><span><?php echo $row['product_description']; ?>
-                    </span></h5>
+                <h5 style="line-height: 1.5;">
+                    <span><?php echo $row['product_description']; ?></span>
+                </h5>
+
                 <br>
-                <p><b>Color: </b><span><?php echo $row['product_color']; ?> </p>
+                <p><b>Color: </b><span><?php echo $row['product_color']; ?></span></p>
             </div>
-
-
         </div>
+
+
 
     <?php } ?>
 </section>
@@ -147,5 +154,64 @@ if (isset($_GET['product_id'])) {
         });
     }
 </script>
+
+<style>
+    .item .row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .small-img-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .small-img-col {
+        margin-bottom: 10px;
+    }
+
+    .item img#mainImg {
+        width: 100%;
+        max-height: 500px;
+        /* Consistent max height for the main image */
+        object-fit: contain;
+    }
+
+    .small-img {
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.3s;
+        width: 80px;
+        /* Smaller size for thumbnail images */
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .small-img:hover {
+        border: 2px solid #1A2130;
+    }
+
+    .product-description {
+        padding-left: 20px;
+        /* Add some padding for spacing */
+    }
+
+    .product-description h2 {
+        font-size: 28px;
+        /* Ensure the price is prominent */
+    }
+
+    .product-description h4 {
+        font-size: 24px;
+        /* Adjust the font size for the product name */
+    }
+
+    .product-description p,
+    .product-description h5 {
+        font-size: 16px;
+    }
+</style>
 
 <?php include('layouts/footer.php') ?>
