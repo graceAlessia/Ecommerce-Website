@@ -43,18 +43,19 @@ if (isset($_GET['product_id'])) {
                 <img class="img-fluid w-100 pb-1" src="assets\imgs\<?php echo $row['product_image']; ?>" id="mainImg">
                 <div class="small-img-group my-2">
                     <div class="small-img-col">
-                        <img src="assets\imgs\<?php echo $row['product_image']; ?>" width="100%" height="auto" class="small-img">
+                        <img src="assets/imgs/<?php echo $row['product_image']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image']; ?>">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets\imgs\<?php echo $row['product_image2']; ?>" width="100%" height="auto" class="small-img">
+                        <img src="assets/imgs/<?php echo $row['product_image2']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image2']; ?>">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets\imgs\<?php echo $row['product_image3']; ?>" width="100%" height="auto" class="small-img">
+                        <img src="assets/imgs/<?php echo $row['product_image3']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image3']; ?>">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets\imgs\<?php echo $row['product_image4']; ?>" width="100%" height="auto" class="small-img">
+                        <img src="assets/imgs/<?php echo $row['product_image4']; ?>" width="100%" height="auto" class="small-img" data-main-image="assets/imgs/<?php echo $row['product_image4']; ?>">
                     </div>
                 </div>
+
             </div>
 
 
@@ -75,7 +76,7 @@ if (isset($_GET['product_id'])) {
                 <h5><span><?php echo $row['product_description']; ?>
                     </span></h5>
                 <br>
-                <p>Color [ <span><?php echo $row['product_color']; ?> ]</p>
+                <p><b>Color: </b><span><?php echo $row['product_color']; ?> </p>
             </div>
 
 
@@ -136,4 +137,15 @@ if (isset($_GET['product_id'])) {
 
     }
 </script>
+<script>
+    var mainImg = document.getElementById("mainImg");
+    var smallImg = document.getElementsByClassName("small-img");
+
+    for (let i = 0; i < smallImg.length; i++) {
+        smallImg[i].addEventListener("mouseover", function() {
+            mainImg.src = this.getAttribute("data-main-image");
+        });
+    }
+</script>
+
 <?php include('layouts/footer.php') ?>
