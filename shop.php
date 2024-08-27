@@ -2,12 +2,11 @@
 
 include('server/dbcon.php');
 include('layouts/header.php');
-//search function
 
 // Search and Pagination Functionality
 if (isset($_POST['search'])) {
-    $category = $_POST['category'];
     $price = $_POST['price'];
+    $category = isset($_POST['category']) ? $_POST['category'] : 'all'; // Default to 'all' if no category is selected
 
     // Determine the page number
     if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
@@ -18,7 +17,7 @@ if (isset($_POST['search'])) {
 
     // Get the total number of records based on the search criteria
     if ($category == 'all') {
-        // If "All" category is selected, count all products under the specified price
+        // If "All" category is selected, or no category is selected, count all products under the specified price
         $stmt1 = $conn->prepare("SELECT COUNT(*) As total_records FROM products WHERE product_price<=?");
         $stmt1->bind_param('i', $price);
     } else {
@@ -75,7 +74,6 @@ if (isset($_POST['search'])) {
     $products = $stmt2->get_result();
 }
 
-
 ?>
 
 <?php include('layouts/header.php') ?>
@@ -90,63 +88,54 @@ if (isset($_POST['search'])) {
                 <h4 class="text-uppercase">Search Items</h4>
                 <hr>
                 <form action="shop.php" method="POST">
-                    <div class="row mx-auto container">
+                    <div class="container row mx-auto">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <p>Category</p>
                             <div class="form-check">
-                                <input class="form-check-input" value="all" type="radio" name="category" id="category_all" <?php if (isset($category) && $category == 'all') {
-                                                                                                                                echo 'checked';
-                                                                                                                            } ?>>
                                 <label class="form-check-label" for="category_all">
-                                    All
+                                    <input class="form-check-input" value="all" type="radio" name="category" id="category_all" <?php if (isset($category) && $category == 'all') {
+                                                                                                                                    echo 'checked';
+                                                                                                                                } ?>>All
                                 </label>
                             </div>
-
                             <div class="form-check">
-                                <input class="form-check-input" value="polo_shirts" type="radio" name="category" id="category_one" <?php if (isset($category) && $category == 'polo_shirts') {
-                                                                                                                                        echo 'checked';
-                                                                                                                                    } ?>>
                                 <label class="form-check-label" for="category_one">
-                                    Polo Shirts
+                                    <input class="form-check-input" value="polo_shirts" type="radio" name="category" id="category_one" <?php if (isset($category) && $category == 'polo_shirts') {
+                                                                                                                                            echo 'checked';
+                                                                                                                                        } ?>>Polo Shirts
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" value="hoodies" type="radio" name="category" id="category_two" <?php if (isset($category) && $category == 'hoodies') {
-                                                                                                                                    echo 'checked';
-                                                                                                                                } ?>>
                                 <label class="form-check-label" for="category_two">
-                                    Hoodies
+                                    <input class="form-check-input" value="hoodies" type="radio" name="category" id="category_two" <?php if (isset($category) && $category == 'hoodies') {
+                                                                                                                                        echo 'checked';
+                                                                                                                                    } ?>>Hoodies
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" value="shirts" type="radio" name="category" id="category_three" <?php if (isset($category) && $category == 'shirts') {
-                                                                                                                                    echo 'checked';
-                                                                                                                                } ?>>
                                 <label class="form-check-label" for="category_three">
-                                    Shirts
+                                    <input class="form-check-input" value="shirts" type="radio" name="category" id="category_three" <?php if (isset($category) && $category == 'shirts') {
+                                                                                                                                        echo 'checked';
+                                                                                                                                    } ?>>Shirts
                                 </label>
                             </div>
                         </div>
                     </div>
 
-
-
                     <div class="price-bar row mx-auto container mt-5">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <p>Price</p>
                             <div class="d-flex justify-content-center mb-2">
-                                <span id="rangeValue" style="color: black;  "><?php echo isset($price) ? $price : '100'; ?>$</span>
+                                <span id="rangeValue" style="color: black;"><?php echo isset($price) ? $price : '100'; ?>$</span>
                             </div>
                             <input type="range" name="price" value="<?php echo isset($price) ? $price : '100'; ?>"
-                                class="form-range w-50" min="10" max="500" id="customRange2"
+                                class="range w-50" min="10" max="500" id="customRange2"
                                 oninput="updateRangeValue(this.value)">
                             <div class="w-50 d-flex justify-content-between">
                                 <span>10</span>
                                 <span>500</span>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="form-group my-3 mx-3">
                         <input type="submit" name="search" value="Search" class="btn">
@@ -203,11 +192,7 @@ if (isset($_POST['search'])) {
                         }
 
                         for ($i = $start_page; $i <= $end_page; $i++) {
-                            echo '<li class="page-item';
-                            if ($i == $page_no) {
-                                echo ' active';
-                            }
-                            echo '"><a class="page-link" href="?page_no=' . $i . '">' . $i . '</a></li>';
+                            echo '<li class="page-item ' . ($i == $page_no ? 'active' : '') . '"><a class="page-link" href="?page_no=' . $i . '">' . $i . '</a></li>';
                         }
 
                         if ($end_page < $total_no_of_pages) {
@@ -229,17 +214,16 @@ if (isset($_POST['search'])) {
                         </li>
                     </ul>
                 </nav>
-
             </div>
         </div>
     </div>
 </section>
 
+<?php include('layouts/footer.php') ?>
 
 <script>
+    // Function to update the price display based on the range input
     function updateRangeValue(value) {
-        document.getElementById('rangeValue').textContent = value + '$';
+        document.getElementById('rangeValue').innerText = value + '$';
     }
 </script>
-
-<?php include('layouts/footer.php');

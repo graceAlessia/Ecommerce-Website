@@ -6,10 +6,10 @@
 <!--HOME-->
 <section id="home">
     <div class="container">
-        <h4>Welcome to Cozy Shark</h4>
+        <h4><span>Welcome to Cozy Shark</span></h4>
         <h1><span>Best Deals</span></h1>
-        <h5>Eshop offers the best products for the most affordable prices</h5>
-        <a href="shop.php"><button class="main-button mt-3">Shop Now</button></a>
+        <h5><span class="title-3">Our shop offers the best products for the most affordable prices</span></h5>
+        <a href="shop.php"><button class="main-button mt-3" style="color: white;">Shop Now</button></a>
     </div>
 </section>
 

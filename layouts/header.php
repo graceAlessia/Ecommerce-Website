@@ -18,22 +18,22 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets\css\style3.css">
     <link rel="stylesheet" href="assets\css\loginstyle.css">
     <link rel="stylesheet" href="assets\css\registerstyle.css">
-    <link rel="stylesheet" href="assets\css\shop.css">
+    <link rel="stylesheet" href="assets\css\shop1.css">
     <link rel="stylesheet" href="assets\css\item.css">
-    <link rel="stylesheet" href="assets\css\account.css">
-    <link rel="stylesheet" href="assets\css\cart.css">
+    <link rel="stylesheet" href="assets\css\account4.css">
+    <link rel="stylesheet" href="assets\css\cart2.css">
     <link rel="stylesheet" href="assets\css\checkout.css">
 
 </head>
 
 <body>
     <!--Nav Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light py-3 fixed-top">
         <div class="container">
-            <img src="assets\imgs\main imgs\Logo_white.svg" alt="Cozy_Shark" style="height:50px; width:auto;" class="logo">
+            <img src="assets\imgs\main\Logo_white.svg" alt="Cozy_Shark" style="height:50px; width:auto;" class="logo">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">

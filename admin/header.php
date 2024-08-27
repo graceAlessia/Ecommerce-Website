@@ -19,7 +19,8 @@ session_start();
 
     <style>
         .pagination .page-item {
-            margin: 0 5px;
+            margin: 0 2px;
+
             /* Optional: space between pagination items */
         }
 

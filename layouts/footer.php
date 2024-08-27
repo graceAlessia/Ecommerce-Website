@@ -2,7 +2,7 @@
 <footer class="mt-5 py-5">
     <div class="row container mx-auto pt-5">
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <img class="logo" src="assets\imgs\main imgs\Logo_white.svg" style="height:50px; width: auto;">
+            <img class="logo" src="assets\imgs\main\Logo_white.svg" style="height:50px; width: auto;">
             <p class="pt-3">We provide the best quality products with fair price.</p>
         </div>
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">

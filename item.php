@@ -68,12 +68,14 @@ if (isset($_GET['product_id'])) {
                     <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
                     <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
                     <input type="number" name="product_quantity" value="1" />
-                    <button class="add-to-cart" type="submit" name="add_to_cart">Add To Cart</button>
+                    <button class="btn add-to-cart" type="submit" name="add_to_cart">Add To Cart</button>
                 </form>
-                <h4 class="mt-5 mb-5">Product Details</h4>
-                <span><?php echo $row['product_description']; ?>
-                </span>
-
+                <h4 class="mt-5 mb-3">Product Details</h4>
+                <hr>
+                <h5><span><?php echo $row['product_description']; ?>
+                    </span></h5>
+                <br>
+                <p>Color [ <span><?php echo $row['product_color']; ?> ]</p>
             </div>
 
 

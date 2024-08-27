@@ -63,12 +63,13 @@ if (isset($_SESSION['logged_in'])) {
 <section class="my-5 py-5">
     <div class="row container mx-auto">
         <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
-            <p class="text-center" style="color: green;"><?php if (isset($_GET['register_success'])) {
-                                                                echo $_GET['register_success'];
-                                                            } ?></p>
+            <!--          
+         <p class="text-center" style="color: green;"><?php if (isset($_GET['register_success'])) {
+                                                            echo $_GET['register_success'];
+                                                        } ?></p>
             <p class="text-center" style="color: green;"><?php if (isset($_GET['login_success'])) {
                                                                 echo $_GET['login_success'];
-                                                            } ?></p>
+                                                            } ?></p> -->
 
             <h3 class="font-weight-bold">Account Info</h3>
             <hr class="mx-auto">
@@ -79,8 +80,8 @@ if (isset($_SESSION['logged_in'])) {
                 <p>Email: <span><?php if (isset($_SESSION['user_email'])) {
                                     echo $_SESSION['user_email'];
                                 } ?></span></p>
-                <p><a href="#order_table" id="order-btn">Your orders</a></p>
-                <p><a href="account.php?logout=1" id="logout-btn">Logout</a></p>
+                <p><a href="#order_table" id="order-btn"><b>Your orders</b></a></p>
+                <p><a href="account.php?logout=1" id="logout-btn"><b>Logout</b></a></p>
             </div>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12">

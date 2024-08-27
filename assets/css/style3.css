@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-.nav-bottons{
-    margin-left:70%;
-}
-
 *{
     margin:0;
     padding:0;
@@ -39,38 +35,8 @@ h6{
     color:#D8D8D8;
 }
 
-button{
-    background-color: #1A2130;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 5px 5px;
-    font-size: 15px;
-    transition: background-color 0.3s ease;
-    border-color: transparent;
-}
 
-button:hover{
-    background-color: rgba(255, 255, 255, 0.233);
-}
-.btn{
-    background: #1A2130;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 5px 5px;
-    font-size: 15px;
-    transition: background-color 0.3s ease;
-    border-color: transparent;
-}
-
-.btn:hover{
-    background-color:#7e90b3;
-    color: white;
-}
-
+/*navbar*/
 .navbar{
     font-size: 16px !important; 
     padding-top: 1rem !important;
@@ -106,7 +72,9 @@ button:hover{
     cursor: pointer;
     margin-left: 5px;
 }
-
+.nav-bottons{
+    margin-left:70%;
+}
 @media only screen and (max-width: 990px){
 
     .nav-bottons{
@@ -153,7 +121,7 @@ button:hover{
 
 
 #home{
-    background-image: url(https://www.intheblouse.com/wp-content/uploads/2023/05/clothes-grunge-background-shelf-cream-background-collection-clothes-hanging-rack-1-1024x683.jpg);
+    background-image: url(../imgs/main/home.jpg);
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -166,8 +134,16 @@ button:hover{
     text-align: center;
 }
 #home span {
-    color: brown;
+    color: rgb(255, 255, 255); /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
+    -webkit-text-stroke: 0.5px #ffffff; /* Text stroke (outline) */
 }
+#home span.title-3 {
+    color: rgb(255, 255, 255); /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
+    -webkit-text-stroke: 0.5px #ffffff;
+}
+
 
 
 #home .main-button {
@@ -181,15 +157,12 @@ button:hover{
         color: black;
     }
     
-    #home .main-button:hover {
-        /* background: rgba(255, 255, 255, 0.5); Lighter background */
-        box-shadow: 0px 4px 15px rgba(35, 35, 35, 0.2); /* Add shadow */
-    }
+
     
 
 
 #home .main-button:hover {
-    background: rgba(255, 255, 255, 0.5); /* Lighter background */
+    background: rgba(208, 220, 240, 0.5); /* Lighter background */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
@@ -197,69 +170,41 @@ button:hover{
 #home .mt-3 {
     margin-top: 1rem !important;}
 
-#new .one img{
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#new .one{
-    position: relative;
-}
-
-#new .one .details{
-    position: absolute;
-    top:0;
-    left:0;
-    color: burlywood;
-    font-weight: bold;
-    transition: 0.4 ease;
-    opacity: 0.5;
-    background-color: rgb(1, 1, 1);
-    width: 100%;
-    height: 100%;
-}
-
-#new .one .details .btn {
-    background: rgba(255, 255, 255, 0.233);
+    
+button{
+    background-color: #1A2130;
     color: white;
     font-family: "Poppins", sans-serif;
-    border-color: transparent;
     border-radius: 5px;
     padding: 5px 10px;
     margin: 5px 5px;
     font-size: 15px;
     transition: background-color 0.3s ease;
-}
-#new .one .details:hover{
-    opacity: 0.7;
-    
+    border-color: transparent;
 }
 
-#new .one:nth-child(1) .details{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
+button:hover{
+    background-color: #7e90b3;
+}
+.btn{
+    background: #1A2130;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    border-color: transparent;
 }
 
-#new .one:nth-child(2) .details{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align:center;
+.btn:hover{
+    background-color:#7e90b3 !important;
+    color: white;
 }
-#new .one:nth-child(3) .details{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align:end;
-}
+
+
+
 
 /* Products */
 
@@ -307,8 +252,11 @@ hr{
     color: goldenrod;
 }
 
+
+/*banner*/
+
 #banner{
-    background-image: url(https://www.intheblouse.com/wp-content/uploads/2023/05/clothes-grunge-background-shelf-cream-background-collection-clothes-hanging-rack-1-1024x683.jpg);
+    background-image: url(../imgs/main/banner.jpg);
     width: 100%;
     height: 60vh;
     background-size: cover;
@@ -329,6 +277,10 @@ hr{
 #banner button:hover{
     background-color: #7e90b3;
 }
+
+
+/*footer*/
+
 
 footer{
     background-color:#1A2130;
@@ -379,3 +331,49 @@ footer .logo:hover{
     filter: brightness(0) saturate(100%) invert(59%) sepia(17%) saturate(574%) hue-rotate(181deg) brightness(93%) contrast(95%);
    
 }
+
+
+/*Pagination*/
+.pagination .page-item {
+    margin: 0 2px;
+    /* Optional: space between pagination items */
+}
+
+.pagination .page-link {
+    color: white;
+    /* Default color for page links */
+    background-color: #1A2130;
+    /* Default background color */
+    border: 1px solid #dee2e6;
+    /* Border color */
+}
+
+.pagination .page-item.active .page-link {
+    color: #1A2130;
+    /* Text color for the active page */
+    background-color: whitesmoke;
+    /* Background color for the active page */
+    border-color: #dee2e6;
+    /* Border color for the active page */
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #7e90b3;
+    /* Text color for disabled items */
+    background-color: #fff;
+    /* Background color for disabled items */
+    border-color: #dee2e6;
+    /* Border color for disabled items */
+}
+
+.pagination .page-link:hover {
+    color: white;
+    /* Text color on hover */
+    background-color: #7e90b3;
+    /* Background color on hover */
+    border-color: #dee2e6;
+    /* Border color on hover */
+}
+
+
+/*radio button*/
